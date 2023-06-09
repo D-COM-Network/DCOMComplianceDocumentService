@@ -155,10 +155,6 @@ public class ComplianceDocumentFilter {
 		}
 		
 		private static void stripBody(ComplianceItem item) {
-				if (item.hasMetaData("body")) {
-					item.removeMetaData("body");
-					item.setMetaData("body","");
-				}
 				if (item instanceof Section) {
 						Section s=(Section)item;
 						for (int i=0; i < s.getNoSections();i++) stripBody(s.getSection(i));
@@ -166,6 +162,7 @@ public class ComplianceDocumentFilter {
 				}
 				if (item instanceof Paragraph) {
 						Paragraph p=(Paragraph)item;
+						p.setBodyText("");
 						for (int i=0; i < p.getNoParagraphs();i++) stripBody(p.getParagraph(i));
 						for (int i=0; i < p.getNoInserts();i++) p.removeSubItem(p.getInsert(i));
 				}

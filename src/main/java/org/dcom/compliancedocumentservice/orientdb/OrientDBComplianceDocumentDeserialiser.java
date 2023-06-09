@@ -178,7 +178,9 @@ public class OrientDBComplianceDocumentDeserialiser {
     } else {
       url=null;
     }
-  
+    if (r.hasProperty("body")) { 
+      paragraph.setBodyText(r.getProperty("body").toString());
+    }
     if (r.hasProperty("paragraphs")) {
       int number=1;
       ArrayList<ORecord> paragraphs =  (ArrayList<ORecord>)r.getProperty("paragraphs");

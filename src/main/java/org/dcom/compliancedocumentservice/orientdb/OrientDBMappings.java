@@ -58,7 +58,6 @@ public class OrientDBMappings {
 			makeMap("dcterms:type","type");
 			makeMap("numbered","numbered");
 			makeMap("colspan","colspan");
-			makeMap("body","body");
 			makeMap("caption","caption");
 			makeMap("rowspan","rowspan");
 			makeMap("cellType","cellType");
